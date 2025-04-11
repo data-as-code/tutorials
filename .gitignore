@@ -1,4 +1,7 @@
 .DS_Store
 venv/
 dist/
+build/
+*.egg-info/
 *.whl
+__pycache__/

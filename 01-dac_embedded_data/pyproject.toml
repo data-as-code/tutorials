@@ -1,0 +1,4 @@
+[project]
+name = "dac-energy-tutorial-01"
+version = "1.0.0"
+dependencies = ["pandas~=2.2", "pyarrow"]
