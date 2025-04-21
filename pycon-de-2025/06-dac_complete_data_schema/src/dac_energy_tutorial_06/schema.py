@@ -95,7 +95,7 @@ class Schema(pa.DataFrameModel):
             columns=cls.source,
             values=cls.value_in_gwh,
         ).reset_index()
-        check_result = True
+        is_check_successful = True
         for col in df[cls.source].unique():
             if col != "Total":
                 is_total_smaller = df_pivoted[col] > df_pivoted["Total"]
@@ -105,5 +105,5 @@ class Schema(pa.DataFrameModel):
                         "Error: {col} is greater than Total in:\n"
                         f"{df_pivoted[is_total_smaller].loc[:, relevant_cols]}"
                     )
-                    check_result = False
-        return check_result
+                    is_check_successful = False
+        return is_check_successful
